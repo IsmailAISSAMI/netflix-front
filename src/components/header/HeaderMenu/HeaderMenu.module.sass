@@ -1,0 +1,28 @@
+.header_menu 
+    flex: 1
+
+    nav
+        float: left
+        
+        ul 
+            display: flex
+            justify-content: center
+            align-items: center
+            list-style: none
+
+            li 
+                margin: 0 0.625rem
+                letter-spacing: 1px
+
+                @media (max-width: 595px) 
+                     margin: 0 0.25rem  
+                
+                a
+                    color: #e5e5e5 
+                    font-size: 0.75rem               
+                    font-weight: 500
+                    cursor: pointer
+
+            .active a
+                font-weight: bold
+                color: #fff

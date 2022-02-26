@@ -1,0 +1,58 @@
+.jumbotron_item
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 2rem 5%
+    border-bottom: 0.5rem solid #222
+    overflow: hidden
+
+    @media (max-width: 950px)
+        flex-direction: column
+
+    &_text
+        width: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+
+        @media (max-width: 950px) 
+            width: 100%
+            padding: 0.375rem 3rem
+            text-align: center
+
+        @media (max-width: 595px) 
+            padding: 0.375rem 0.75rem
+
+        h1
+            font-size: 3rem
+            line-height: 1.1
+            margin-bottom: 0.5rem
+            text-align: center
+    
+            @media (max-width: 595px) 
+                margin-bottom: 0.375rem
+                font-size: 2.25rem
+
+        h2
+            font-size: 1.625rem
+            font-weight: normal
+            line-height: normal
+            text-align: center
+
+            @media (max-width: 595px)
+                font-size: 1.125rem
+                
+
+    &_media
+        width: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+
+        @media (max-width: 950px) 
+            width: 100%
+            padding: 0.375rem 3rem
+
+        @media (max-width: 595px) 
+            padding: 0.375rem 0.5rem

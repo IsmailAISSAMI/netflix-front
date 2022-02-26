@@ -1,0 +1,21 @@
+.message {
+    margin: 15px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    &__info {
+        background: white;
+        border: 1px solid lightgray;
+        color: black;
+    }
+    &__error {
+        background: red;
+        border: 1px solid red;
+        color: white;
+    }
+    &__success {
+        background: green;
+        border: 1px solid green;
+        color: white;
+    }
+}

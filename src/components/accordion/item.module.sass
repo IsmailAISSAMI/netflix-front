@@ -1,0 +1,53 @@
+.accordion_item
+    width: 70%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin-bottom: 0.625rem
+
+    @media (max-width: 595px) 
+        width: 85%
+        margin-bottom: 0.5rem
+
+
+    button
+        width: 100%
+        margin-bottom: 0.5rem
+        padding: 0.8rem 1.2rem
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border: none
+        cursor: pointer
+        user-select: none
+        color: #fff
+        background-color: #303030
+        font-size: 1.5rem
+        font-weight: normal
+        user-select: none
+
+        @media (max-width: 595px) 
+            font-size: 1.125rem
+
+        .icon
+            width: 1.625rem
+            height: 1.625rem
+
+            @media (max-width: 595px) 
+                width: 1.25rem
+                height: 1.25rem
+
+    &_body
+        user-select: none
+        color: #fff
+        background: #303030
+        padding: 0.8em 2.2em 0.8em 1.2em
+        white-space: pre-wrap
+        font-size: 1.25rem
+        font-weight: 400
+        line-height: normal
+        text-align: justify
+
+        @media (max-width: 595px) 
+            font-size: 0.875rem

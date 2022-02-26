@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    &-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        color:  $color-text;
+        text-decoration: none;
+    }
+    
+    &-dark {
+        background-color: $bg-dark;
+    }
+}
+
