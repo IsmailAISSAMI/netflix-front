@@ -1,0 +1,36 @@
+.table
+    width: 100%
+
+    tr
+        height: 3.75rem
+        border-bottom: 1px solid #ccc
+
+        &:last-child
+            border: 0
+
+        td
+            vertical-align: middle
+            padding: 0 1rem
+
+        .radio
+            background: #e50914
+            border: 0.0625rem solid #fff
+            border-radius: 0.125rem
+
+            input[type="radio"].input_radio 
+                display: none
+
+            input[type="radio"].input_radio + label 
+                padding: 0.0625rem
+                color: #e5e5e5
+                font-weight: 500
+                border: 0
+                font-size: 1rem
+                margin: 0 auto
+            
+
+            input[type="radio"].input_radio:checked + label
+                color: #fff
+                letter-spacing: 0.0625rem
+                font-size: 1.125rem
+                font-weight: 600

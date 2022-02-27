@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import authService from "../../services/auth.service";
 import FormTitle from "../../components/UI/FormTitle";
 import Input from "../../components/UI/Input/Input";
@@ -7,6 +8,7 @@ import FormButton from "../../components/UI/FormButton";
 import styles from "./createUsers.module.sass";
 
 const CreateUsers = () => {
+  const router = useRouter();
   const [user, setUser] = useState({ isAdmin: false });
 
   const handleSubmit = (e) => {
@@ -29,7 +31,6 @@ const CreateUsers = () => {
         <FormTitle title="Create a new user" />
         <Input
           type="text"
-          label="firstName"
           id="firstName"
           name="firstName"
           placeholder="First Name"
@@ -37,7 +38,6 @@ const CreateUsers = () => {
         />
         <Input
           type="text"
-          label="lastName"
           id="lastName"
           name="lastName"
           placeholder="Last Name"
@@ -45,7 +45,6 @@ const CreateUsers = () => {
         />
         <Input
           type="email"
-          label="email"
           id="email"
           name="email"
           placeholder="Email address"
@@ -53,7 +52,6 @@ const CreateUsers = () => {
         />
         <Input
           type="password"
-          label="password"
           id="password"
           name="password"
           placeholder="Password"
