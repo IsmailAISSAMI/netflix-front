@@ -11,29 +11,32 @@ import Input from "../../components/UI/Input/Input";
 import styles from "./index.module.sass";
 
 const stripePromise = loadStripe(
-  "pk_test_51IYB3kKHE4A4HHrOPwry6jr7QSnFpODKJliEseS4NYAxmsuAnRfVkNgfdDcSEsMPPOqCEc5NhCGowDFhoy5D9zlu00jW1rgElH"
+  "pk_test_51IYAy4EMn5LU6PTL0lp2KxEvyqlaMoQ5ASLz8NrN7DZBRF3Foo4q86s2tIN1OXXT08rtL3hIZx1UPqZhYZKqpQ1400scdPmFdA"
 );
 
 const Index = () => {
   const [account, setAccount] = useState({});
-  const [plan, setPlan] = useState("basic");
+  const [plan, setPlan] = useState({label:"standard", price: 30});
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    console.log("[state] Plan :" + plan);
+    console.log(`[state] Plan :\nLabel=${plan.label || "none"}\nPrice=${plan.price || 0}`);
   }, [plan]);
+
+  useEffect(() => {
+    console.log(`[state] Account :\nEmail=${account.email || "none"}\nPassword=${account.password || "none"}`);
+  }, [account]);
 
   const handleConfirmation = async () => {
     // const token = localStorage.getItem('token');
     const payload = {
-      total: 8.99,
-      // count: count,
-      // cart: cart
+      //plan: plan.label,
+      total: plan.price
     };
     try {
       setStep(step + 1);
       const stripe = await stripePromise;
-      const response = await stripeService.createSession(payload);
+      const response = await stripeService.createSession(payload, plan);
       await stripe.redirectToCheckout({
         sessionId: response.id,
       });

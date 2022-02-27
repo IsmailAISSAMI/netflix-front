@@ -6,19 +6,19 @@ import CartContext from "../../context/CartContext";
 import Message from "../../components/UI/Message/Message";
 import styles from "./index.module.scss";
 
-const stripePromise = loadStripe("pk_test_51IYB3kKHE4A4HHrOPwry6jr7QSnFpODKJliEseS4NYAxmsuAnRfVkNgfdDcSEsMPPOqCEc5NhCGowDFhoy5D9zlu00jW1rgElH");
+const stripePromise = loadStripe("pk_test_51IYAy4EMn5LU6PTL0lp2KxEvyqlaMoQ5ASLz8NrN7DZBRF3Foo4q86s2tIN1OXXT08rtL3hIZx1UPqZhYZKqpQ1400scdPmFdA");
 
 const Index = () => {
 
-  const { cart, addItem, removeItem, total, count, deleteLine, deleteCart} = useContext(CartContext);
+  //const { cart, addItem, removeItem, total, count, deleteLine, deleteCart} = useContext(CartContext);
 
   const handleConfirmation = async () => {
     const token = localStorage.getItem('token');
-    const payload = {
-      total: total,
-      count: count,
-      cart: cart
-    }
+    // const payload = {
+    //   total: total,
+    //   count: count,
+    //   cart: cart
+    // }
     try {
       const stripe = await stripePromise;
       const response = await stripeService.createSession(token, payload);

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Feature from '../components/feature/Feature';
 import Jumbotron from '../components/jumbotron/Jumbotron';
 import Accordion from '../components/accordion/Accordion';
+import Footer from '../components/footer/Footer';
 
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
         <Jumbotron/>
         <Accordion/>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
