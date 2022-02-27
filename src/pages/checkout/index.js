@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TitlePage from "../../components/UI/Title/TitlePage";
 import { loadStripe } from "@stripe/stripe-js";
 import stripeService from "../../services/stripe.service";
-import CartContext from "../../context/CartContext";
+//import CartContext from "../../context/CartContext";
 import Message from "../../components/UI/Message/Message";
 import styles from "./index.module.scss";
 
