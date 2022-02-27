@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import genreService from "../../services/genre.service";
-import AccueilTitle from "../../components/UI/AccueilTitle/AccueilTitle";
-import Input from "../../components/UI/Input/Input";
-import AccueilButton from "../../components/UI/AccueilButton/AccueilButton";
-import styles from "./index.module.scss";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import categoryService from "../../services/category.service";
+import FormTitle from "../../components/UI/FormTitle";
+import FormButton from "../../components/UI/FormButton";
+import Input from "../../components/UI/Input/Input";
+import styles from "./CreateCategories.module.sass";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const [category, setCategory] = useState("");
 
+  useEffect(() => {
+    console.log(`[State] Category ${category || "none"}`);
+  }, [category]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    genreService
-      .addAdminGenre(category)
+    categoryService
+      .createCategory(category)
       .then((data) => {
-          console.log(`[v] create category data:\n ${data}`);
+        console.log(`[v] Create category data:\n ${data}`);
         router.push("/createCategories");
       })
       .catch((err) => {
@@ -24,22 +28,23 @@ const index = () => {
   };
 
   return (
-    <div className={styles.add_genre}>
-      <form className={styles.add_genre_form} onSubmit={(e) => handleSubmit(e)}>
-        <AccueilTitle title="Create a new genre" />
+    <div className={styles.create_category}>
+      <form
+        className={styles.create_category_form}
+        onSubmit={(e) => handleSubmit(e)}
+      >
+        <FormTitle title="Create a new category of movies" />
         <Input
           type="text"
-          label="title"
-          id="title"
-          name="title"
-          placeholder="Title"
-          onChange={(e) => setGenre({ ...genre, title: e.target.value })}
+          id="label"
+          name="label"
+          placeholder="Category label"
+          onChange={(e) => setCategory(e.target.value)}
         />
-        <AccueilButton label="Create" onClick={()=>handleSubmit}/>
+        <FormButton label="Create" onClick={() => handleSubmit} />
       </form>
-      <br></br>
     </div>
   );
 };
 
-export default index;
+export default Index;

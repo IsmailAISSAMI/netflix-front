@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import CartContext from "../../../context/CartContext";
 import Image from "next/image";
@@ -7,6 +8,14 @@ import { toast, ToastContainer } from "react-nextjs-toast";
 
 const ProductCard = (props) => {
   const { addItem } = useContext(CartContext);
+
+  const handleAddToWishList = () => {
+    toast.notify(`Votre produit est bien ajouté au panier`, {
+      duration: 15,
+      type: "success",
+    });
+    addItem(props.product);
+  };
 
   return (
     <div className={styles.product__card}>
@@ -25,17 +34,8 @@ const ProductCard = (props) => {
         </a>
       </Link>
       <div className={styles.btn__group}>
-        <button
-          className="btn btn-black"
-          onClick={() => {
-            toast.notify(`Votre produit est bien ajouté au panier`, {
-              duration: 5,
-              type: "success",
-            });
-            addItem(props.product);
-          }}
-        >
-          Ajouter au panier
+        <button onClick={() => handleAddToWishList}>
+          <Icon icon="carbon:add-filled" color="black" width="24" height="24" />
         </button>
       </div>
     </div>

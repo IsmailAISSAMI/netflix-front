@@ -7,12 +7,11 @@ import CheckboxInput from "../../components/UI/CheckboxInput";
 import FormButton from "../../components/UI/FormButton";
 import styles from "./createUsers.module.sass";
 
-const CreateUsers = () => {
+const Index = () => {
   const router = useRouter();
   const [user, setUser] = useState({ isAdmin: false });
 
   const handleSubmit = (e) => {
-    console.log(user);
     e.preventDefault();
     authService
       .addAdminUser(user)
@@ -70,4 +69,4 @@ const CreateUsers = () => {
   );
 };
 
-export default CreateUsers;
+export default Index;

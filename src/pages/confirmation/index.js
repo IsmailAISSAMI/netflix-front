@@ -1,26 +1,27 @@
-import React, {useEffect, useContext} from 'react';
-import { useRouter } from "next/router";
-import CartContext from "../../context/CartContext";
-import Titlepage from '../../components/UI/Title/TitlePage';
-const Index = () => {
-    const { deleteCart } = useContext(CartContext);
+// import React, {useEffect, useContext} from 'react';
+// import { useRouter } from "next/router";
+// import CartContext from "../../context/CartContext";
+// import Titlepage from '../../components/UI/Title/TitlePage';
 
-    const router = useRouter();
+// const Index = () => {
+//     const { deleteCart } = useContext(CartContext);
 
-    useEffect(() => {
-        deleteCart();
-    });
+//     const router = useRouter();
+
+//     useEffect(() => {
+//         deleteCart();
+//     });
     
-    return (
+//     return (
       
-        <div>
-            <Titlepage title="Merci pour votre commande" />
-            <div className="text-center">
-                <p>Votre commande d'un montant de {router.query.amount} € a bien été validée</p>
-            </div>
-        </div>
-    );
+//         <div>
+//             <Titlepage title="Merci pour votre commande" />
+//             <div className="text-center">
+//                 <p>Votre commande d'un montant de {router.query.amount} € a bien été validée</p>
+//             </div>
+//         </div>
+//     );
 
-}
+// }
 
-export default Index;
+// export default Index;
