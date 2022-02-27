@@ -32,7 +32,7 @@ const Index = () => {
 
   return (
     <div>
-      <TitlePage title="Panier" />
+      {/* <TitlePage title="Panier" />
       <div className={styles.cart__content}>
         {cart ? (
           <>
@@ -91,7 +91,7 @@ const Index = () => {
             Payer
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
