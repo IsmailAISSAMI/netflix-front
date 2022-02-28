@@ -33,7 +33,6 @@ const Index = () => {
       .then((data) => {
         console.log(data);
         router.reload("/monitoringUsers");
-        //router.push("/monitoringUsers");
       })
       .catch((err) => {
         console.log(err);
