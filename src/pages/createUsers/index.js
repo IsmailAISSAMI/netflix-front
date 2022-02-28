@@ -14,10 +14,10 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     authService
-      .addAdminUser(user)
+      .signup(user)
       .then((data) => {
         console.log(data);
-        router.push("/userAdmin");
+        router.push("/monitoringUsers");
       })
       .catch((err) => {
         console.log(err);

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import authService from "../../services/auth.service";
+import CreateButton from "../../components/UI/CreateButton/index";
 import DeleteButton from "../../components/UI/DeleteButton/index";
 import MonitoringTable from "../../components/UI/MonitoringTable/index";
 import styles from "./MonitoringUsers.module.sass";
@@ -41,11 +42,9 @@ const Index = () => {
 
   return (
     <div className={styles.monitoring_users}>
-      {/* <div>
-            <button className={styles.product_create}>
-              <Link href="/addUser">Create</Link>
-            </button>
-          </div> */}
+      <div className={styles.monitoring_users_buttons}>
+        <CreateButton onClick={() => router.push("/createUsers")} />
+      </div>
       <MonitoringTable header={tableHeader} data={users}>
         <tbody>
           {users.map((user, index) => {

@@ -17,16 +17,16 @@ const HeaderMenu = () => {
           <li
             className={router.pathname == "/tv-programmes" ? styles.active : ""}
           >
-            <Link href="/tv-programmes">
+            <Link href="/">
               <a>Tv Programmes</a>
             </Link>
           </li>
-          <li className={router.pathname == "/films" ? styles.active : ""}>
+          <li className={router.pathname == "/" ? styles.active : ""}>
             <Link href="/Films">
               <a>Films</a>
             </Link>
           </li>
-          <li className={router.pathname == "/my-list" ? styles.active : ""}>
+          <li className={router.pathname == "/" ? styles.active : ""}>
             <Link href="/my-list">
               <a>My List</a>
             </Link>
