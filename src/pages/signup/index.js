@@ -34,7 +34,7 @@ const Index = () => {
       total: plan.price
     };
     authService
-      .register(account)
+      .signup(account)
       .then((data) => {
         localStorage.setItem("token", JSON.stringify(data.token));
         console.log(data);

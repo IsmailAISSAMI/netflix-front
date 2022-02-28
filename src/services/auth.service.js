@@ -1,5 +1,5 @@
 export default {
-  register(user) { 
+  signup(user) { 
     return fetch(`${process.env.NEXT_PUBLIC_API_URLAPI_URL}api/v1/users/createUser`, {
       method: "POST",
       headers: {
