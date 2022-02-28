@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { loadStripe } from "@stripe/stripe-js";
 import stripeService from "../../services/stripe.service";
+import authService from "../../services/auth.service";
 import Step from "./Step";
 import StepContext from "./StepContext";
 import stepsData from "../../data/signup.data";
 import StepTable from "./StepTable";
-import NextButton from "../../components/UI/NextButton";
 import Input from "../../components/UI/Input/Input";
+import NextButton from "../../components/UI/NextButton";
 import styles from "./index.module.sass";
 
 const stripePromise = loadStripe(
@@ -28,11 +29,21 @@ const Index = () => {
   }, [account]);
 
   const handleConfirmation = async () => {
-    // const token = localStorage.getItem('token');
     const payload = {
       //plan: plan.label,
       total: plan.price
     };
+    authService
+      .register(account)
+      .then((data) => {
+        localStorage.setItem("token", JSON.stringify(data.token));
+        console.log(data);
+        setStep(3);
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+
     try {
       setStep(step + 1);
       const stripe = await stripePromise;
@@ -111,7 +122,7 @@ const Index = () => {
               );
             })}
           </ul>
-          <NextButton onClick={() => setStep(step + 1)} />
+          <NextButton onClick={() => setStep(step + 1)}/>
         </Step>
       ) : (
         <></>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import authService from "../../services/auth.service";
-import FormTitle from "../../components/UI/FormTitle";
+import FormTitle from "../../components/UI/FormTitle/Index";
 import Input from "../../components/UI/Input/Input";
-import CheckboxInput from "../../components/UI/CheckboxInput";
-import FormButton from "../../components/UI/FormButton";
+import CheckboxInput from "../../components/UI/CheckboxInput/Index";
+import FormButton from "../../components/UI/FormButton/Index";
 import styles from "./createUsers.module.sass";
 
 const Index = () => {

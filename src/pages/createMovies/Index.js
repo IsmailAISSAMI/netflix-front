@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import movieService from "../../services/movie.service";
 import categoryService from "../../services/category.service";
-import FormTitle from "../../components/UI/FormTitle";
-import FormButton from "../../components/UI/FormButton";
+import FormTitle from "../../components/UI/FormTitle/Index";
+import FormButton from "../../components/UI/FormButton/Index";
 import Input from "../../components/UI/Input/Input";
 import styles from "./CreateMovies.module.sass";
 

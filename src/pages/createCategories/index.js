@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import categoryService from "../../services/category.service";
-import FormTitle from "../../components/UI/FormTitle";
-import FormButton from "../../components/UI/FormButton";
+import FormTitle from "../../components/UI/FormTitle/Index";
+import FormButton from "../../components/UI/FormButton/Index";
 import Input from "../../components/UI/Input/Input";
 import styles from "./CreateCategories.module.sass";
 

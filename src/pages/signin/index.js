@@ -14,7 +14,7 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     authService
-      .login(user)
+      .signin(user)
       .then((data) => {
         console.log(data);
         if (data.message) {
