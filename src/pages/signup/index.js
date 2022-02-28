@@ -39,31 +39,27 @@ const Index = () => {
       //plan: plan.label,
       total: plan.price,
     };
-    authService
-      .signup(account)
-      .then((data) => {
-        localStorage.setItem("token", JSON.stringify(data.token));
-        console.log(data);
-        try {
-          setStep(step + 1);
-          const stripe = await stripePromise;
-          const response = await stripeService.createSession(payload, plan);
-          await stripe.redirectToCheckout({
-            sessionId: response.id,
-          });
-        } catch (error) {
-          console.log(error);
-        }
-        //setStep(3);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // authService
+    //   .signup(account)
+    //   .then((data) => {
+    //     localStorage.setItem("token", JSON.stringify(data.token));
+    //     console.log(data);
+    //     //setStep(3);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     try {
       setStep(step + 1);
       const stripe = await stripePromise;
       const response = await stripeService.createSession(payload, plan);
+      
+      await authService.signup(account).then((data) => {
+        localStorage.setItem("token", JSON.stringify(data.token));
+        console.log(data);
+      })
+
       await stripe.redirectToCheckout({
         sessionId: response.id,
       });
