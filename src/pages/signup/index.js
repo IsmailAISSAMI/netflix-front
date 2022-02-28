@@ -39,16 +39,6 @@ const Index = () => {
       //plan: plan.label,
       total: plan.price,
     };
-    // authService
-    //   .signup(account)
-    //   .then((data) => {
-    //     localStorage.setItem("token", JSON.stringify(data.token));
-    //     console.log(data);
-    //     //setStep(3);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
 
     try {
       setStep(step + 1);
