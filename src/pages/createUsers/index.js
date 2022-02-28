@@ -4,7 +4,7 @@ import authService from "../../services/auth.service";
 import FormTitle from "../../components/UI/FormTitle/index";
 import FormButton from "../../components/UI/FormButton/index";
 import Input from "../../components/UI/Input/Input";
-import CheckboxInput from "../../components/UI/CheckboxInput/Index";
+import CheckboxInput from "../../components/UI/CheckboxInput/index";
 import styles from "./createUsers.module.sass";
 
 const Index = () => {
