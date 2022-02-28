@@ -51,7 +51,7 @@ const Index = () => {
         <FormButton label="Sign in"/>
         <p className={styles.sign_in_form_text}>
             New to Netflix ?
-            <Link href="/register">
+            <Link href="/signup">
               <a>Sign up now.</a>
             </Link>
         </p>
