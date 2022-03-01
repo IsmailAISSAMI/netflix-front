@@ -8,7 +8,7 @@ const HeaderToolbar = () => {
 
   useEffect(() => {
     setToken(localStorage.getItem("token"));
-  }, []);
+  });
 
   return (
     <div className={styles.header_toolbar}>

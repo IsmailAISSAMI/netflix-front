@@ -9,7 +9,7 @@ const HeaderMenu = () => {
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem("isAdmin"));
-  }, []);
+  });
 
   return (
     <div className={styles.header_menu}>
