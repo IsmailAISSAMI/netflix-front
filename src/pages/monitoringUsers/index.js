@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import authService from "../../services/auth.service";
 import CreateButton from "../../components/UI/CreateButton/index";
 import DeleteButton from "../../components/UI/DeleteButton/index";
