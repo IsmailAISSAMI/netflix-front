@@ -12,7 +12,7 @@ const HeaderToolbar = () => {
 
   return (
     <div className={styles.header_toolbar}>
-      {  token !== null && token !== undefined && token !== {} ? (
+      {  token ? (
         <Image
           src="/images/account/account-image-2.png"
           alt="Account image"

@@ -21,6 +21,7 @@ const Index = () => {
     "Director",
     "Distribution",
     "Categories",
+    "Actions"
   ];
 
   useEffect(() => {

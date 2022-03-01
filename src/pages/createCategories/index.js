@@ -32,6 +32,7 @@ const Index = () => {
       <form
         className={styles.create_category_form}
         onSubmit={(e) => handleSubmit(e)}
+        method="post"
       >
         <FormTitle title="Create a new category of movies" />
         <Input
@@ -39,9 +40,9 @@ const Index = () => {
           id="label"
           name="label"
           placeholder="Category label"
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={(e) => setCategory({ ...category, label: e.target.value })}
         />
-        <FormButton label="Create" onClick={() => handleSubmit} />
+        <FormButton label="Create" />
       </form>
     </div>
   );

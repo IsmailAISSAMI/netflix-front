@@ -1,15 +1,12 @@
 import React from 'react';
-import Link from "next/link";
-
-import { getProducts } from "../../graphql/queries/products";
+import { getMovies } from "../../graphql/queries/movies";
 import { useQuery } from "@apollo/react-hooks";
-
-import ProductGrid from '../../components/product/ProductGrid/ProductGrid';
+import MovieGrid from '../../components/movie/MovieGrid/MovieGrid';
 import TitlePage from "../../components/UI/Title/TitlePage";
 
 const Index = () => {
 
-    const { loading, error, data } = useQuery(getProducts);
+    const { loading, error, data } = useQuery(getMovies);
     
     if (loading) {
         return "loading...";
@@ -25,7 +22,16 @@ const Index = () => {
     return (
         <div className="page__shop">
             <TitlePage title="Movies"/>
-            <ProductGrid products={data.getProducts}/>
+            
+            {/* {
+                data.getMovies.map((el, index)=>{
+                    return <p key={index}>{el}</p>
+                }
+                )
+            } */}
+
+        <MovieGrid movies={data.getMovies}/>
+            
         </div>
     );
 }

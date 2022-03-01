@@ -21,6 +21,7 @@ const Index = () => {
           return false;
         }
         localStorage.setItem("token", data.token);
+        localStorage.setItem("isAdmin", data.isAdmin);
         router.push("/browse");
       })
       .catch((err) => {

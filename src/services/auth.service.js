@@ -44,7 +44,7 @@ export default {
   },
   updateUser(token, user) {
     return fetch(
-      `${process.env.NEXT_PUBLIC_API_URLAPI_URL}api/v1/users/update-user`,
+      `${process.env.NEXT_PUBLIC_API_URLAPI_URL}api/v1/users/edit/${user._id}`,
       {
         method: "PUT",
         headers: {

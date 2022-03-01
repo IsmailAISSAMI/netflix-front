@@ -47,6 +47,7 @@ const Index = () => {
       
       await authService.signup(account).then((data) => {
         localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("isAdmin", data.isAdmin);
         console.log(data);
       })
 
