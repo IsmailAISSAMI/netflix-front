@@ -1,42 +1,38 @@
 import React, {useContext} from "react";
-import Image from "next/image";
-
-import { toast, ToastContainer } from "react-nextjs-toast";
-
-import { useRouter } from "next/router";
-
-import { getProduct } from "../../../graphql/queries/products";
-import { useQuery } from "@apollo/react-hooks";
-
-import CartContext from "../../../context/CartContext";
-
+// import { useRouter } from "next/router";
+// import Image from "next/image";
+// import { toast, ToastContainer } from "react-nextjs-toast";
+// import { getProduct } from "../../../graphql/queries/products";
+// import { useQuery } from "@apollo/react-hooks";
+// import CartContext from "../../../context/CartContext";
 import styles from "./index.module.scss";
 
 const Index = () => {
-    const router = useRouter();
-    const { addItem } = useContext(CartContext);
+    // const router = useRouter();
+  //   const { addItem } = useContext(CartContext);
 
 
-  const { loading, error, data } = useQuery(getProduct, {
-    variables: {
-      id: router.query.id,
-    },
-  });
+  // const { loading, error, data } = useQuery(getProduct, {
+  //   variables: {
+  //     id: router.query.id,
+  //   },
+  // });
 
-  if (loading) {
-    return "loading...";
-  }
+  // if (loading) {
+  //   return "loading...";
+  // }
 
-  if (error) {
-    console.log(error);
-    return null;
-  }
+  // if (error) {
+  //   console.log(error);
+  //   return null;
+  // }
 
-  console.log(data.title);
+  // console.log(data.title);
 
   return (
     <div className={styles.product__container}>
-      <ToastContainer align={"right"} position={"top"} />
+      todo
+      {/* <ToastContainer align={"right"} position={"top"} />
       <div className={styles.product__img}>
         <Image
           src={data.getProduct.img}
@@ -67,7 +63,7 @@ const Index = () => {
         >
           Ajouter au panier
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
